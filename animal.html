@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Animal Mania</title>
+ </head>
+<body>
+
+<h2>Animal game by William Colbert</h2>
+
+<form>
+    <label for="form1_animal">The hidden animal type </label>
+    <input type ="password" id="form1_animal" name="form1_animal" value="Chicken"> <br>
+
+    <label for="form1_guess">Guess the animal </label>
+    <input type ="text" id="form1_guess" name="form1_guess" autofocus> <br>
+
+    <input type="button" onclick="checkAnimal()" value="Check the guess">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+let wrong = 0
+let correct = 0
+function checkAnimal (){
+    console.log("Getting form values")
+    animal = document.getElementById("form1_animal").value
+    guess = document.getElementById("form1_guess").value
+
+    out = document.getElementById("result")
+
+    if(animal == guess){
+        correct += 1
+        alert("Ruff ruff")
+    } else {
+        wrong += 1
+        alert("Grrr")
+    }
+    out.innerHTML = "Correct: " + correct + " Wrong: " + wrong
+}
+</script>
+
+</body>
+</html> 
