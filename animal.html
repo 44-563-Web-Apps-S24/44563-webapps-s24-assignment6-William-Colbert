@@ -42,5 +42,25 @@ function checkAnimal (){
 }
 </script>
 
+<div>
+    <img id="pic" src="lemonade.PNG" height="150" width="150" onclick="selectImage()">
+    <script>
+        let useImage = 1;
+        function selectImage(){
+            switch(useImage){
+                case 1: document.getElementById('pic').src = "espresso.png";
+                        useImage = 2; 
+                break;
+                case 2: document.getElementById('pic').src = "cocacola.png";
+                        useImage = 3;
+                break;
+                case 3: document.getElementById('pic').src = "lemonade.png";
+                        useImage = 1;
+                break;
+            }
+        }
+    </script>
+</div>
+
 </body>
 </html> 
