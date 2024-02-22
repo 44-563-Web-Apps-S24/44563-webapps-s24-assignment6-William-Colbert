@@ -21,6 +21,15 @@
     <input type="button" onclick="selectPack()" value="Select for packing">
 </form>
 
+<form>
+    <label for="month">Enter Travel Month</label>
+    <input type ="text" id="month" name="month" value = "May"> <br>
+
+    <label for="price">Enter Price</label>
+    <input type ="text" id="price" name="price"> <br>
+
+    <input type="button" onclick="updatePack()" value="Update the pack">
+</form>
 
 <p id="result">My Pack</p>
 
@@ -58,6 +67,19 @@ function selectPack(){
     }
     console.log(light)
     console.log(my_pack)
+    out.innerHTML = JSON.stringify(my_pack)
+
+}
+
+function updatePack(){
+    let month = document.getElementById("month").value
+    let price = document.getElementById("price").value
+
+    out = document.getElementById("result")
+
+    my_pack["Month"] = month
+    my_pack["Price"] = price
+
     out.innerHTML = JSON.stringify(my_pack)
 }
 </script>
