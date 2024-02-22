@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trip Packing</title>
+    </head>
+ 
+<body>
+
+<h2>William Colbert Packs For a Trip</h2>
+
+<form>
+    <label for="pack">Pack light</label>
+    <input type ="checkbox" id="pack" name="pack" value = True> <br>
+
+    <label for="carry">Carry on</label>
+    <input type ="checkbox" id="carry" name="carry" value = True> <br>
+
+    <label for="tablet">Tablet</label>
+    <input type ="checkbox" id="tablet" name="tablet" value = False> <br>
+
+    <input type="button" onclick="selectPack()" value="Select for packing">
+</form>
+
+
+<p id="result">My Pack</p>
+
+<script> 
+
+let my_pack = {}
+function selectPack(){
+    my_pack = {}
+    let light = false
+    let carry = false
+    let tablet = false
+    console.log(light)
+    console.log(my_pack)
+    out = document.getElementById("result")
+    if(document.getElementById("pack").checked){
+        light = true
+        my_pack["Pack Light"] = light
+    } 
+    else{
+        my_pack["Pack Light"] = light
+    }
+    if(document.getElementById("carry").checked){
+        carry = true
+        my_pack["Carry On"] = carry
+    } 
+    else{
+        my_pack["Carry On"] = carry
+    }
+    if(document.getElementById("tablet").checked){
+        tablet = true
+        my_pack["Tablet"] = tablet
+    } 
+    else{
+        my_pack["Tablet"] = tablet
+    }
+    console.log(light)
+    console.log(my_pack)
+    out.innerHTML = JSON.stringify(my_pack)
+}
+</script>
+
+</body>
+</html> 
