@@ -54,5 +54,43 @@ function discount(){
 }
 </script>
 
+<form>
+    <input type="radio" id="sum" name="sum" value="sum" onclick="chooseOp()">
+    <label for="sum">Sum</label></br>
+  
+    <input type="radio" id="mult" name="mult" value="multiply" onclick="chooseOp()">
+    <label for="mult">Mult</label></br>
+  
+    <input type="radio" id="exp" name="exp" value="exponent" onclick="chooseOp()">
+    <label for="exp">Exp</label></br>
+
+    <input type="button" onclick="chooseOp()" value="Get values from radio group">
+  </form>
+
+  <p id="result2">Result of chooseOp()</p>
+
+  <script>
+    function chooseOp(){
+    let price2 = document.getElementById("price").value
+    let discount2 = document.getElementById("reductions").value
+    let final = 0
+    let output = ""
+
+    out = document.getElementById("result2")
+    if(document.getElementById("sum").checked){
+        final = price2 - -(discount2)
+        output = "Sum of " + price2 + " and " + discount2 + " is " + final
+    }
+    else if(document.getElementById("mult").checked){
+        final = price2 * discount2
+        output = "Product of " + price2 + " and " + discount2 + " is " + final
+    }
+    else if(document.getElementById("exp").checked){
+        final = Math.pow(price2, discount2)
+        output = price2 + " to the power of " + discount2 + " is " + final
+    }
+    out.innerHTML = output
+}
+  </script>
 </body>
 </html> 
